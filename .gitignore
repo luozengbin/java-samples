@@ -1,0 +1,8 @@
+# ファイル名が「.xxx」で終わるファイルを無視する場合
+*.class
+.classpath
+.project
+
+# 特定ディレクトリ配下のファイルはすべて無視する場合
+target/
+.settings/
