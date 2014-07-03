@@ -1,0 +1,63 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>jp.jizai.sample.jaxb</groupId>
+	<artifactId>jaxb-datetime</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>jaxb-datetime-model</module>
+		<module>jaxb-datetime-service</module>
+		<module>jaxb-datetime-client</module>
+	</modules>
+
+	<build>
+
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<configuration>
+						<source>1.7</source>
+						<target>1.7</target>
+						<debug>true</debug>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+        			<groupId>org.apache.maven.plugins</groupId>
+        			<artifactId>maven-war-plugin</artifactId>
+        			<configuration>
+          			<failOnMissingWebXml>false</failOnMissingWebXml>
+        				</configuration>
+      			</plugin>
+
+				<!-- 開発環境デプロイを用 -->
+				<plugin>
+					<groupId>org.jboss.as.plugins</groupId>
+					<artifactId>jboss-as-maven-plugin</artifactId>
+					<version>7.5.Final</version>
+					<executions>
+						<execution>
+							<phase>install</phase>
+							<goals>
+								<goal>deploy</goal>
+							</goals>
+							<configuration>
+								<hostname>localhost</hostname>
+								<port>9999</port>
+								<username>admin</username>
+								<password>P@ssw0rd</password>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://sample.jizai.jp/jaxb/datetime/model"
+	xmlns:tns="http://sample.jizai.jp/jaxb/datetime/model" elementFormDefault="qualified">
+	
+	<!-- 正規化型１ -->
+	<element name="DateTestModel1">
+		<complexType>
+			<sequence>
+				<element name="datetime" type="dateTime" minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<!-- 正規化型２ -->
+	<element name="DateTestModel2">
+		<complexType>
+			<sequence>
+				<element name="datetime" type="dateTime" minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
+	
+	<!-- 正規化型３ -->
+	<element name="DateTestModel3">
+		<complexType>
+			<sequence>
+				<element name="datetime" type="dateTime" minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
+	
+	<!-- 文字列型 -->
+	<element name="DateTestModel4">
+		<complexType>
+			<sequence>
+				<element name="datetime" type="string" minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
+</schema>

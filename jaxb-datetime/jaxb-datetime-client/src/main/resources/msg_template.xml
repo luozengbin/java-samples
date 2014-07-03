@@ -1,0 +1,8 @@
+<env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://sample.jizai.jp/jaxb/datetime/model">
+   <env:Header/>
+   <env:Body>
+      <ns1:DateTestModel%d>
+         <ns1:datetime>%s</ns1:datetime>
+      </ns1:DateTestModel%d>
+   </env:Body>
+</env:Envelope>
