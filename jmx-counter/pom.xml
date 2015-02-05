@@ -19,6 +19,13 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>net.arnx</groupId>
+			<artifactId>jsonic</artifactId>
+			<version>1.3.6</version>
+			<type>jar</type>
+			<scope>compile</scope>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>jmx-counter</finalName>
@@ -33,18 +40,12 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
-			
+
 			<!-- ローカルテスト用 -->
-			<!-- 
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-				</configuration>
-			</plugin>
- 			-->
- 			
+			<!-- <plugin> <groupId>org.mortbay.jetty</groupId> <artifactId>jetty-maven-plugin</artifactId> 
+				<configuration> <scanIntervalSeconds>10</scanIntervalSeconds> </configuration> 
+				</plugin> -->
+
 			<!-- 開発環境デプロイを用 -->
 			<plugin>
 				<groupId>org.jboss.as.plugins</groupId>

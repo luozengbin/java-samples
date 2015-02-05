@@ -15,6 +15,7 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 
 /**
@@ -44,6 +45,7 @@ import javax.xml.bind.annotation.XmlType;
 public class DateTestModel2 implements DateTestModel{
 
     @XmlSchemaType(name = "dateTime")
+    @XmlJavaTypeAdapter(DateAdapter.class)
     protected Date datetime;
 
     /**

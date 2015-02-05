@@ -28,9 +28,12 @@ public class XMLGregorianCalendarUtil {
         GregorianCalendar gCalendar = new GregorianCalendar();
         gCalendar.setTime(date);
         XMLGregorianCalendar xmlCalendar = null;
-
-        xmlCalendar = df.newXMLGregorianCalendar(gCalendar);
-
+        try {
+            xmlCalendar = df.newXMLGregorianCalendar(gCalendar);            
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
         return xmlCalendar;
     }
 

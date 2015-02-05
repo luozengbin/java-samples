@@ -9,13 +9,14 @@
 package jp.jizai.sample.jaxb.datetime.model;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+
+import jp.jizai.sample.jaxb.datetime.util.DateUtil;
 
 
 /**
@@ -73,11 +74,13 @@ public class DateTestModel4 implements DateTestModel {
     @Override
     public Date getDate() {
         try {
-            return sdf.parse(datetime);
+            return (new DateUtil()).getDateFormatInstance().parse(datetime);
         } catch (ParseException e) {
             e.printStackTrace();
         }
         return null;
     }
-    static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX");
+    
+    
+
 }

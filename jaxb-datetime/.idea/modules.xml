@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/jaxb-datetime.iml" filepath="$PROJECT_DIR$/jaxb-datetime.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jaxb-datetime-client/jaxb-datetime-client.iml" filepath="$PROJECT_DIR$/jaxb-datetime-client/jaxb-datetime-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jaxb-datetime-model/jaxb-datetime-model.iml" filepath="$PROJECT_DIR$/jaxb-datetime-model/jaxb-datetime-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jaxb-datetime-service/jaxb-datetime-service.iml" filepath="$PROJECT_DIR$/jaxb-datetime-service/jaxb-datetime-service.iml" />
+    </modules>
+  </component>
+</project>
+
