@@ -14,6 +14,9 @@ import java.util.concurrent.Future;
 
 /**
  * Created by akira on 14/07/11.
+ * http://d.hatena.ne.jp/Yosuke_Taka/20130429/1367226363
+ * http://www.ibm.com/developerworks/jp/java/library/j-nio2-1/
+ * http://stackoverflow.com/questions/15242804/how-does-jdk-7-implement-nio2-on-linux
  */
 public class AsyncFileReadMain {
 
@@ -23,7 +26,8 @@ public class AsyncFileReadMain {
 
     public static void main(String[] args) throws IOException,
             InterruptedException, ExecutionException {
-        final Path path = Paths.get("/tmp/xyz.txt");
+    	
+        final Path path = Paths.get("******/java7-learning/src/main/resources/xyz.txt");
         ExecutorService executorService = Executors.newFixedThreadPool(LINE_SIZE);
         try (AsynchronousFileChannel channel = AsynchronousFileChannel.open(
                 path, EnumSet.of(StandardOpenOption.READ), executorService)) {
