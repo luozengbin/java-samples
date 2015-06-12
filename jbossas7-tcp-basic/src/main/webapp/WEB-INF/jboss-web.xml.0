@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+<!-- 
+	<security-domain>other</security-domain>
+	<use-jboss-authorization>true</use-jboss-authorization> <!--- default is false -->
+ -->
+</jboss-web>

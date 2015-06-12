@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:subsystem default-server="default-server" default-servlet-container="default" default-virtual-host="default-host" instance-id="" statistics-enabled="false" xmlns:p="urn:jboss:domain:undertow:2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:jboss:domain:undertow:2.0 ../xsd/wildfly-undertow_2_0.xsd ">
+  <p:buffer-cache buffer-size="" buffers-per-region="" max-regions="" name=""/>
+  <p:server default-host="default-host" name="" servlet-container="default">
+    <p:ajp-listener allow-encoded-slash="false" allow-equals-in-cookie-value="false" always-set-keep-alive="true" buffer-pipelined-data="true" buffer-pool="default" decode-url="true" enabled="true" max-buffered-request-size="16384" max-cookies="200" max-header-size="5120" max-headers="200" max-parameters="1000" max-post-size="0" name="" no-request-timeout="0" read-timeout="0" receive-buffer="0" record-request-start-time="false" redirect-socket="" request-parse-timeout="0" resolve-peer-address="false" scheme="" send-buffer="0" socket-binding="" tcp-backlog="0" tcp-keep-alive="true" url-charset="UTF-8" worker="default" write-timeout="0"/>
+    <p:http-listener allow-encoded-slash="false" allow-equals-in-cookie-value="false" always-set-keep-alive="true" buffer-pipelined-data="true" buffer-pool="default" certificate-forwarding="" decode-url="true" enable-http2="" enabled="true" max-buffered-request-size="16384" max-cookies="200" max-header-size="5120" max-headers="200" max-parameters="1000" max-post-size="0" name="" no-request-timeout="0" proxy-address-forwarding="" read-timeout="0" receive-buffer="0" record-request-start-time="false" redirect-socket="" request-parse-timeout="0" resolve-peer-address="false" send-buffer="0" socket-binding="" tcp-backlog="0" tcp-keep-alive="true" url-charset="UTF-8" worker="default" write-timeout="0"/>
+    <p:https-listener allow-encoded-slash="false" allow-equals-in-cookie-value="false" always-set-keep-alive="true" buffer-pipelined-data="true" buffer-pool="default" decode-url="true" enable-http2="" enable-spdy="" enabled="true" enabled-cipher-suites="" enabled-protocols="" max-buffered-request-size="16384" max-cookies="200" max-header-size="5120" max-headers="200" max-parameters="1000" max-post-size="0" name="" no-request-timeout="0" read-timeout="0" receive-buffer="0" record-request-start-time="false" request-parse-timeout="0" resolve-peer-address="false" security-realm="" send-buffer="0" socket-binding="" tcp-backlog="0" tcp-keep-alive="true" url-charset="UTF-8" verify-client="" worker="default" write-timeout="0"/>
+    <p:host alias="" default-web-module="ROOT.war" name="">
+      <p:location handler="" name="">
+        <p:filter-ref name="" predicate="" priority=""/>
+      </p:location>
+      <p:access-log directory="${jboss.server.log.dir}" pattern="common" prefix="access_log" relative-to="" rotate="true" suffix=".log" use-server-log="false" worker="default"/>
+      <p:filter-ref name="" predicate="" priority=""/>
+      <p:single-sign-on cookie-name="JSESSIONIDSSO" domain="" http-only="false" path="" secure="false"/>
+    </p:host>
+  </p:server>
+  <p:servlet-container allow-non-standard-wrappers="false" default-buffer-cache="" default-encoding="" default-session-timeout="30" disable-caching-for-secured-pages="true" eager-filter-initialization="false" ignore-flush="false" name="" stack-trace-on-error="local-only" use-listener-encoding="false">
+    <p:jsp-config check-interval="0" development="false" disabled="false" display-source-fragment="true" dump-smap="false" error-on-use-bean-invalid-class-attribute="false" generate-strings-as-char-arrays="false" java-encoding="UTF8" keep-generated="true" mapped-file="true" modification-test-interval="4" recompile-on-fail="false" scratch-dir="" smap="true" source-vm="1.6" tag-pooling="true" target-vm="1.6" trim-spaces="false" x-powered-by="true"/>
+    <p:session-cookie comment="" domain="" http-only="true" max-age="0" name="" secure="true"/>
+    <p:persistent-sessions path="" relative-to=""/>
+    <p:websockets buffer-pool="default" dispatch-to-worker="true" worker="default"/>
+  </p:servlet-container>
+  <p:handlers>
+    <p:file cache-buffer-size="1024" cache-buffers="1024" directory-listing="true" name="" path=""/>
+    <p:reverse-proxy cached-connections-per-thread="0" connection-idle-timeout="0" connections-per-thread="0" max-request-time="0" name="" problem-server-retry="0" request-queue-size="0" session-cookie-names="">
+      <p:host instance-id="" name="" outbound-socket-binding="" path="" scheme="http"/>
+    </p:reverse-proxy>
+  </p:handlers>
+  <p:filters>
+    <p:basic-auth name="" security-domain=""/>
+    <p:connection-limit max-concurrent-requests="0" name="" queue-size="0"/>
+    <p:response-header header-name="" header-value="" name=""/>
+    <p:gzip name=""/>
+    <p:error-page code="" name="" path=""/>
+    <p:mod-cluster advertise-frequency="0" advertise-path="" advertise-protocol="" advertise-socket-binding="" broken-node-timeout="0" cached-connections-per-thread="0" connection-idle-timeout="0" connections-per-thread="0" health-check-interval="0" management-access-predicate="" management-socket-binding="" max-request-time="0" name="" request-queue-size="0" security-key="" worker=""/>
+    <p:filter class-name="" module="" name="">
+      <p:param name="" value=""/>
+    </p:filter>
+  </p:filters>
+</p:subsystem>
