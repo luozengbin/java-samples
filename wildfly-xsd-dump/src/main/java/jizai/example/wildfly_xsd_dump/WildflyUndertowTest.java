@@ -1,24 +1,19 @@
 package jizai.example.wildfly_xsd_dump;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import java.beans.PropertyChangeListener;
+import java.io.FileInputStream;
 
-import javax.xml.bind.JAXB;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
 
-
-import org.eclipse.persistence.jaxb.JAXBContextProperties;
+import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContext;
+import org.eclipse.persistence.jaxb.dynamic.DynamicJAXBContextFactory;
 
 public class WildflyUndertowTest {
 	
 	public static void main(String[] args) throws Exception {
 		
-//		UndertowSubsystemType subSystem = JAXB.unmarshal(new File("/home/akira/mywork/devspace/eclipse44/jaxx/src/main/java/jizai/example/jaxx/misc", "wildfly-undertow_1_2.xml"), UndertowSubsystemType.class);
+//		UndertowSubsystemType subSystem = JAXB.unmarshal(new File("./xml", "wildfly-undertow_2_0.xml"), UndertowSubsystemType.class);
 //		System.out.println(subSystem);
-//		
-//		
 //		
 //		System.setProperty("jaxp.debug", "true");
 //		System.setProperty("jaxb.debug", "true");
@@ -31,6 +26,15 @@ public class WildflyUndertowTest {
 //        Marshaller marshaller = jc.createMarshaller();
 //        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 //        marshaller.marshal(subSystem, System.out);
-//
+		
+//		System.setProperty("jaxp.debug", "true");
+//		System.setProperty("jaxb.debug", "true");
+//		System.setProperty("javax.xml.bind.context.factory", "org.eclipse.persistence.jaxb.JAXBContextFactory");
+		
+		DynamicJAXBContext jaxbContext = DynamicJAXBContextFactory.createContextFromXSD(new FileInputStream("./src/main/java/customer.xsd"), null, null, null);
+		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
+		
+		
+		PropertyChangeEvent l;
   }
 }

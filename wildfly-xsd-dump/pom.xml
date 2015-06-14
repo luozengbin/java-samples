@@ -29,15 +29,34 @@
 			<artifactId>javax.json-api</artifactId>
 			<version>1.0</version>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.moxy</artifactId>
 			<version>2.6.0</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>eclipselink</artifactId>
 			<version>2.6.0</version>
 		</dependency>
+		<dependency>
+	<groupId>com.sun.xml.bind</groupId>
+	<artifactId>jaxb-xjc</artifactId>
+	<version>2.2.10</version>
+</dependency>
+		<dependency>
+	<groupId>com.sun.xml.bind</groupId>
+	<artifactId>jaxb-impl</artifactId>
+	<version>2.2.6</version>
+</dependency>
+		
+<dependency>
+  <groupId>com.sun</groupId>
+  <artifactId>tools</artifactId>
+  <version>1.7.0</version>
+  <scope>system</scope>
+  <systemPath>${java.home}/../lib/tools.jar</systemPath>
+</dependency>
 	</dependencies>
 </project>
